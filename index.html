@@ -8,8 +8,37 @@
     <title>Yêu em</title>
   </head>
   <body>
-        <a href="https://www.facebook.com/profile.php?id=100024906461618"><div class="head" style="text-align: center;">Xin chào bạn đến với album ảnh của Linh Hân Ngáo</div></a>
-      
+    <div class="" style="text-align: center;">
+            <a href="https://www.facebook.com/profile.php?id=100024906461618">
+            <div class="head" style="display:inline; text-align: center;">Xin chào bạn đến với album ảnh của Linh Hân Ngáo </div>
+          </a>
+          <div class="" style="display:inline; margin-left: 20px;" ><button class="btn" id="playButton">Em có thể nghe nhạc ở đây </button></div>
+          </div>
+
+    <!-- Thẻ audio ẩn -->
+    <audio id="myAudio">
+        <source src="./img/photograph.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+
+    <!-- Nút phát nhạc -->
+
+    <script>
+        // Lấy các phần tử audio và button
+        const audio = document.getElementById('myAudio');
+        const playButton = document.getElementById('playButton');
+
+        // Xử lý sự kiện khi nhấn vào nút
+        playButton.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();  // Phát nhạc
+                playButton.textContent = 'Tạm dừng'; // Đổi chữ trên nút
+            } else {
+                audio.pause();  // Tạm dừng nhạc
+                playButton.textContent = 'Phát nhạc'; // Đổi lại chữ trên nút
+            }
+        });
+    </script>
     <div class="container">
         
         <div class="panel active" style="background-image: url(./img/lh53.png)">
